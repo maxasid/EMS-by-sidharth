@@ -20,7 +20,6 @@ class employee_management_system(employee):
             print("2. View All Employees")
             print("3. Search for Employee")
             print("4. Exit")
-
             choice = input("Enter your choice (1-4): ")
             if choice == '1':
                 self.add_employee()
@@ -33,7 +32,6 @@ class employee_management_system(employee):
                 break
             else:
                 print("Invalid choice. Please try again.")
-
     def add_employee(self):
         try:
             emp_id = int(input("Enter Employee ID: "))
@@ -52,12 +50,10 @@ class employee_management_system(employee):
         if not self.employees:
             print("No employees available.")
             return
-
         print("\nEmp_ID   Name            Age   Department      Salary")
         print("-" * 55)
         for emp in self.employees.values():
             print(f"{emp.emp_id:<8} {emp.name:<15} {emp.age:<5} {emp.department:<15} {emp.salary:<10}")
-
     def search_employee(self):
         try:
             emp_id = int(input("Enter Employee ID to search: "))
@@ -72,7 +68,7 @@ class employee_management_system(employee):
                 print(" Employee not found.")
         except ValueError:
             print("Please enter a valid Employee ID.")
-
+            
 if __name__ == "__main__":
     ems = employee_management_system()
     ems.main_menu()
